@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dragdroppage.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container p-y-1">
+        <div class="row m-b-1">
+          <div class="col-sm-6 offset-sm-3">
+            <div class="form-group input">
+              <label class="sr-only" for="inputFile">File Upload</label>
+              <input type="file" class="file text-primary font-weight-bold" id="file" accept="image/*" onchange="readUrl(this)" data-title="Drag file">
+            </div>
+          </div>
+        </div>
+
+    <button id="filebtn" type="submit">file_upload</button>
+    <button id="showbtn" >show list</button>
+    <script src="fileU.js"></script>
+    <table id="attable"></table>
+    <p id="print">.</p>
+    <script>window.$ = window.jQuery = require('../../node_modules/jquery/dist/jquery.slim.min.js');</script>
+</body>
+</html>

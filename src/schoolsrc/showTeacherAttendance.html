@@ -1,0 +1,206 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../semantic/out/semantic.min.css">
+    <link rel="stylesheet" href="dash.css">
+
+    <title>Home</title>
+</head>
+<body>
+
+    <!--Navigation Bar-->
+    <div class="ui internally celled grid navigaationbar">
+        <div class="row">
+            <div class="three wide column logosection">
+                <img src="sihlogo.png" alt="image" width="80" height="40">
+                <img src="sikkimgovt.png" alt="image" width="80" height="40">
+            </div>
+
+            <div class="nine wide column hei">
+                <div class="ui menu">
+                    <a class="ui dropdown item">
+                        <i class="user icon large usericon"></i>
+                        Profile
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                          <div class="item" id="createProfile">Create Profile</div>
+                            <div class="item" id="showProfile">Show Profile</div>
+                            <div class="item">Update Profile</div>
+                        </div>
+                    </a>
+
+                    <a class="ui dropdown item">
+                        <i class="columns icon"></i>
+                        Attendance
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item" id="fStAt">Fill Attendance</div>
+                            <div class="item" id="sStAt">Show Attendance</div>
+                            <div class="item" id="uStAt">Update Attendance</div>
+                        </div>
+                    </a>
+
+                    <a class="ui dropdown item">
+                        <i class="table icon"></i>
+                        Marks
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item" id="fMarks">Fill Marks</div>
+                            <div class="item" id="sMarks">Show Marks</div>
+                            <div class="item" id="uMarks">Update Marks</div>
+                            <div class="item" id="result">Show Result</div>
+                        </div>
+                    </a>
+
+                    <p class="ui black tag label">Students<br>Section</p>
+                </div>
+            </div>
+
+            <a class="ui teal image label userlabel" id="about">
+                <i class="user circle icon"></i>
+               <p id="userlabel"></p>
+                <!-- <div class="detail">Student</div> -->
+            </a>
+
+            <button class="ui animated button signout" id="signout">
+                <div class="visible content">
+                    Sign-out
+                </div>
+
+                <div class="hidden content">
+                    <i class="sign out alternate icon large"></i>
+                </div>
+            </button>
+        </div>
+    </div>
+
+
+    <!--Side bar-->
+    <div class="ui bottom attached segment pushable">
+        <div class="ui visible inverted left vertical sidebar menu" id="leftSideBar">
+            <br>
+            <h4 class="ui horizontal divider header">
+                <p>School Section</p>
+            </h4>
+
+            <a class="item" id="graphPage">
+                <i class="home icon"></i>
+                School Profile
+              </a>
+            <a class="item" id="fileUpload">
+                <i class="home icon"></i>
+                File Upload
+            </a>
+            <a class="item" id="graph1page">
+                <i class="home icon"></i>
+                Class Marks Analysis Graph
+            </a>
+            <a class="item" id="graph2page">
+                <i class="home icon"></i>
+                Class Attendance Analysis Graph
+            </a>
+            <a class="item" id="graph3page">
+                <i class="home icon"></i>
+                School Male/Female Ratio Graph
+            </a>
+            <a class="item" id="graph4page">
+                <i class="home icon"></i>
+                Student Subject Marks Graph
+            </a>
+
+            <h4 class="ui horizontal divider header">
+                <p>Teacher Section</p>
+              </h4>
+            
+            <a class="item">
+                <i class="home icon"></i>
+                Show Profile
+            </a>
+            <a class="item">
+                <i class="block layout icon"></i>
+                Update Profile
+            </a>
+            <a class="item" id="fTeaAtt">
+                <i class="smile icon"></i>
+                Fill Attendance
+              </a>
+            <a class="item" id="sTeaAtt">
+                <i class="calendar icon"></i>
+                Show Attendance
+              </a>
+            <a class="item" id="uTeaAtt">
+                <i class="calendar icon"></i>
+                Change Attendance
+            </a>
+
+        </div>
+
+        <div class="pusher" id="content">
+            <div class="ui basic segment">
+                <h3 class="ui header">Application Content</h3>
+              
+              <div class="pusher">
+                <h2>Show Teacher Attendance Page</h2>
+                <div class="ui menu">
+                       
+                    <div class="required field">
+                      <div class="ui calendar">
+                          <div class="ui input left icon">
+                            <i class="calendar icon"></i>
+                            <input type="date" placeholder="ATTENDANCE DATE" id="datepicker">
+                          </div>
+                        </div>
+                    </div>
+                 
+                    <button class="ui inverted red button" id="showbtn">Show List</button>
+                </div> 
+      
+      
+              <table class="ui black table Excell" >
+                  <thead>
+                    <tr><th>ID</th>
+                    <th>NAME</th>
+                    <th>ATTENDANCE STATUS</th>
+                  </tr></thead>
+                  <tbody id="attable">
+                
+                  </tbody>
+              </table>
+              <button class="ui inverted green button" id="saveAsExl" disabled>save as excell</button>
+    
+          </div>
+         
+    
+     
+            </div>
+          </div>
+        </div>
+      
+    <!-- ----------------------------------------------------------------------------------------------
+    --------------------------------------------------------------------------------------------------- -->
+   
+</body>
+<!-- <script src="index.js" ></script> -->
+<script>window.$ = window.jQuery = require('../../node_modules/jquery/dist/jquery.slim.min.js');</script>
+<script src="../../bower_components/jquery-table2excel/dist/jquery.table2excel.min.js"></script>
+<script src="../../semantic/out/semantic.min.js"></script>
+<script src="showTeacherAttendance.js"></script>
+
+<script>
+$('.ui.dropdown').dropdown();
+$('.ui.toggle.checkbox')
+            .checkbox()
+            .first().checkbox({
+              onChecked: function() {
+                $("label[for='" + $(this).attr("id") + "']").removeClass('dn').addClass('up').attr('data-content', 'PRESENT');
+              },
+              onUnchecked: function() {
+                $("label[for='" + $(this).attr("id") + "']").removeClass('up').addClass('dn').attr('data-content', 'ABSENT');
+              }
+            });
+
+
+$('.test.checkbox').checkbox('attach events', '.check.button', 'check');
+$('.test.checkbox').checkbox('attach events', '.uncheck.button', 'uncheck');
+</script>
+</html>

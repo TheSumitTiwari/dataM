@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Show Student Attendance</title>
+    <link rel="stylesheet" href="../../semantic/out/semantic.min.css">
+    <link rel="stylesheet" href="dash.css">
+   
+</head>
+<body>
+    
+
+
+<!--Navigation Bar-->
+<div class="ui internally celled grid navigaationbar">
+  <div class="row">
+      <div class="three wide column logosection">
+          <img src="sihlogo.png" alt="image" width="80" height="40">
+          <img src="sikkimgovt.png" alt="image" width="80" height="40">
+      </div>
+
+      <div class="nine wide column hei">
+          <div class="ui menu">
+              <a class="ui dropdown item">
+                  <i class="user icon large usericon"></i>
+                  Profile
+                  <i class="dropdown icon"></i>
+                  <div class="menu">
+                    <div class="item" id="showProfile">Show Profile</div>                           
+                  </div>
+              </a>
+
+              <a class="ui dropdown item">
+                  <i class="columns icon"></i>
+                  Attendance
+                  <i class="dropdown icon"></i>
+                  <div class="menu">                          
+                      <div class="item" id="sStAt">Show Attendance</div>
+                  </div>
+              </a>
+
+              <a class="ui dropdown item">
+                  <i class="table icon"></i>
+                  Marks
+                  <i class="dropdown icon"></i>
+                  <div class="menu">                            
+                      <div class="item" id="sMarks">Show Marks</div>                          
+                      <div class="item" id="result">Show Result</div>
+                  </div>
+              </a>
+
+              <p class="ui black tag label">Students<br>Section</p>
+          </div>
+      </div>
+
+      <a class="ui teal image label userlabel" id="about">
+          <i class="user circle icon"></i>
+         <p id="userlabel"></p>
+          <!-- <div class="detail">Student</div> -->
+      </a>
+
+      <button class="ui animated button signout" id="signout">
+          <div class="visible content">
+              Sign-out
+          </div>
+
+          <div class="hidden content">
+              <i class="sign out alternate icon large"></i>
+          </div>
+      </button>
+  </div>
+</div>
+
+
+<!--Side bar-->
+<div class="ui bottom attached segment pushable">
+  <div class="ui visible inverted left vertical sidebar menu" id="leftSideBar">
+      <br>
+      <h4 class="ui horizontal divider header">
+          <p>School Section</p>
+      </h4>
+
+      <a class="item" id="graphPage">
+          <i class="home icon"></i>
+          School Profile
+        </a>
+      <a class="item" id="fileView">
+          <i class="home icon"></i>
+          File View
+      </a>
+      
+
+      <h4 class="ui horizontal divider header">
+          <p>Teacher Section</p>
+        </h4>
+      
+      <a class="item">
+          <i class="home icon"></i>
+          Show Profile
+      </a>
+    
+      <a class="item" id="sTeaAtt">
+          <i class="calendar icon"></i>
+          Show Attendance
+        </a>
+
+  </div>
+
+  <div class="pusher" id="content">
+      <div class="ui basic segment">
+          <h3 class="ui header">Application Content</h3>
+              
+              <div class="pusher">
+                <h2>Show Student Attendance BLock Page</h2>
+                
+                <button class="ui inverted red button" id="showSbtn">Show Schools</button>                  
+                <button class="ui inverted red button" id="lockbtn" disabled>Proceed</button>
+                <button class="ui inverted red button" id="submitbtn" disabled>Show Attendance</button>
+                <div class="ui menu">
+                  <select id="schoolID" class="ui dropdown">
+                    <option value="" disabled selected>Select School</option>
+                </select> 
+                        <select id="classText" class="ui dropdown">
+                          <option value="" disabled selected>Select Class</option>
+                          <option value="class1">I</option>
+                          <option value="class2">II</option>
+                          <option value="class3">III</option>
+                          <option value="class4">IV</option>
+                          <option value="class5">V</option>
+                          <option value="class6">VI</option>
+                          <option value="class7">VII</option>
+                          <option value="class8">VIII</option>
+                          <option value="class9">IX</option>
+                          <option value="class10">X</option>
+                          <option value="class11">XI</option>
+                          <option value="class12">XII</option>
+                      </select>                
+                     
+                      <select id="secText" class="ui dropdown">
+                        <option value="" disabled selected>Select Section</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select> 
+      
+      
+                    <div class="required field">
+                      <div class="ui calendar">
+                          <div class="ui input left icon">
+                            <i class="calendar icon"></i>
+                            <input type="date" placeholder="ATTENDANCE DATE" id="dateText">
+                          </div>
+                        </div>
+                    </div>
+                 
+                   
+                </div> 
+      
+      
+              <table class="ui black table Excell" >
+                  <thead>
+                    <tr><th>ID</th>
+                    <th>NAME</th>
+                    <th>ATTENDANCE STATUS</th>
+                  </tr></thead>
+                  <tbody id="attable">
+                  
+
+                  </tbody>
+                </table>
+                <button class="ui inverted green button" id="saveAsExl" disabled>save as excell</button>
+    
+          </div>
+         
+    
+     
+            </div>
+          </div>
+        </div>
+
+    
+    <!-- ----------------------------------------------------------------------------------------------
+    --------------------------------------------------------------------------------------------------- -->
+   
+</body>
+<!-- <script src="index.js" ></script> -->
+<script>window.$ = window.jQuery = require('../../node_modules/jquery/dist/jquery.min.js');</script>
+<script src="../../bower_components/jquery-table2excel/dist/jquery.table2excel.min.js"></script>
+<script src="../../semantic/out/semantic.min.js"></script>
+<script src="showStudentAttendance.js"></script>
+
+<script>
+$('.ui.dropdown').dropdown();
+$('.ui.toggle.checkbox')
+            .checkbox()
+            .first().checkbox({
+              onChecked: function() {
+                $("label[for='" + $(this).attr("id") + "']").removeClass('dn').addClass('up').attr('data-content', 'PRESENT');
+              },
+              onUnchecked: function() {
+                $("label[for='" + $(this).attr("id") + "']").removeClass('up').addClass('dn').attr('data-content', 'ABSENT');
+              }
+            });
+
+
+$('.test.checkbox').checkbox('attach events', '.check.button', 'check');
+$('.test.checkbox').checkbox('attach events', '.uncheck.button', 'uncheck');
+</script>
+</html>

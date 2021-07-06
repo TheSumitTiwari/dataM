@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>School Home Page</title>
+    <link rel="stylesheet" href="../../semantic/out/semantic.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+    
+
+
+<div class="ui internally celled grid navigationbar">
+    <div class="row">
+        <div class="three wide column logosection">
+            <img src="logo.png" alt="imggg" width="70" height="40" >      
+            <img src="sikkimlogo.png" alt="imggg" width="70" height="40" >
+          </div>
+          <div class="nine wide column hei">
+            <div class="ui menu ">
+                <i class="user icon large usericon"></i>
+                <a class="ui dropdown item">
+                  Profile
+                  <i class="dropdown icon"></i>
+                  <div class="menu">
+                    <div class="item">Show Profile</div>
+                      
+                    <div class="item">Update Profile</div>
+                  </div>
+                </a>
+                <a class="ui dropdown item">
+                  Attendance
+                  <i class="dropdown icon"></i>
+                  <div class="menu">
+                    <div class="item " id="fStAt">Fill Attendance</div>
+                    <div class="item" id="sStAt">Show Attendance</div>
+                    <div class="item" id="uStAt">Update Attendance</div>
+                  </div>
+                </a>
+                <a class="ui dropdown item">
+                  Marks
+                  <i class="dropdown icon"></i>
+                  <div class="menu">
+                    <div class="item" id="fMarks">Fill Marks</div>
+                    <div class="item" id="sMarks">Show Marks</div>
+                    <div class="item" id="uMarks">Update Marks</div>
+                    <div class="item" id="result" >Show Result</div>
+                  </div>
+                </a>
+
+                <p class="ui red tag label">Students<br>Section</p>
+              </div>
+            </div>
+            <a class="ui teal image label userlabel">
+                <img src="user.jpg">
+                sumit
+                <div class="detail">block</div>
+              </a>
+             
+              <button class="ui animated button signout" id="signout">
+                <div class="visible content">Sign-Out<br>
+                    <i class="calendar alternate outline icon"></i> 25/1/2020?
+                </div>
+                
+                <div class="hidden content">
+                    <i class="sign out alternate icon large"></i>
+                </div>
+            </button>
+                
+          
+    </div>
+</div>
+    <!-- <div class="ui internally celled grid mainc ">
+    <div class="row">
+        <div class="three wide column equal height">
+            <h4 class="ui horizontal divider header">
+                <i class="building icon"></i>
+            </h4>
+            <div class="ui accordion">
+                <div class="ui raised segment">
+                    <p class="ui red ribbon label">Teacher Section</p>
+                    <div class=" title">
+                    <i class="dropdown icon "></i>
+                    Teacher List 1
+                    
+                    </div>
+                    <div class=" content">
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button>
+                    </div>
+                    <div class=" title">
+                        <i class="dropdown icon"></i>
+                    Teacher List 2
+                    
+                    </div>
+                    <div class=" content">
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button>
+                    </div>
+                    <div class=" title">
+                        <i class="dropdown icon"></i>
+                    Teacher List 3
+                    
+                    </div>
+                    <div class=" content">
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                    <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button>
+                    </div>
+                </div>
+        </div>
+
+
+        <h4 class="ui horizontal divider header">
+            <i class="users icon"></i>
+        </h4>
+
+        <div class="ui accordion ">
+                
+          <div class="ui raised segment ">
+                <p class="ui red ribbon label">School Section</p>
+                <div class=" title">
+                  <i class="dropdown icon"></i>
+                 Teacher List 1
+                
+                </div>
+                <div class=" content">
+                <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button>
+                </div>
+                <div class=" title">
+                    <i class="dropdown icon"></i>
+                   Teacher List 2
+                  
+                  </div>
+                  <div class=" content">
+                  <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                  <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                  <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                  <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                  <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button>
+                  </div>
+                  <div class=" title">
+                    <i class="dropdown icon"></i>
+                   Teacher List 3
+                  
+                  </div>
+                  <div class=" content">
+                  <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                  <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                  <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                  <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button><br>
+                  <button id="destroyDBbtn2" class="ui button fluid ">Destroy DB2</button>
+                    </div>
+                </div>
+        </div>
+        </div> -->
+
+
+        <div class="ui bottom attached segment pushable">
+          <div class="ui visible inverted left vertical sidebar menu">
+            <h4 class="ui horizontal divider header">
+              <i class="building inverted icon"></i>
+          </h4>
+            <a class="item">
+              <i class="home icon"></i>
+              Show Profile
+            </a>
+            <a class="item">
+              <i class="block layout icon"></i>
+              Update Profile
+            </a>
+            <a class="item" id="fTeaAtt">
+              <i class="smile icon"></i>
+              Fill Attendance
+            </a>
+            <a class="item" id="sTeaAtt">
+              <i class="calendar icon"></i>
+              Show Attendance
+            </a>
+            <a class="item" id="uTeaAtt">
+              <i class="calendar icon"></i>
+              Change Attendance
+            </a>
+
+            <h4 class="ui horizontal divider header">
+              <i class="building inverted icon"></i>
+          </h4>
+            <a class="item" id="graphPage">
+              <i class="home icon"></i>
+              Graph 1
+            </a>
+                  
+          </div>
+          <div class="pusher">
+            <div class="ui basic segment">
+              <h3 class="ui header">Application Content</h3>
+              
+        <div class="pusher">
+          <table class="ui black table">
+              <thead>
+                <tr><th>ID</th>
+                <th>NAME</th>
+                <th>ATTENDANCE STATUS</th>
+              </tr></thead>
+              <tbody>
+                  <div class="ui positive check button">Mark All Present</div>
+                  <div class="ui negative uncheck button">Mark All Absent</div>
+                  
+                <tr>
+                  <td data-label="ID">1</td>
+                  <td data-label="NAME">A</td>
+                  <td data-label="ATT"><div class="ui test toggle checkbox">
+                    <input type="checkbox" name="public" id="toggle-1"><label class="dn" for="toggle-1" data-content="OFF"></label> 
+                    
+                </div>
+                    </div></td>
+                </tr>
+                <tr>
+                  <td data-label="ID">2</td>
+                  <td data-label="NAME">B</td>
+                  <td data-label="ATT"><div class="ui test toggle checkbox">
+                    <input type="checkbox" name="public" id="toggle-1"><label class="dn" for="toggle-1" data-content="OFF"></label> 
+                    
+                </div>
+                    </div></td>
+                </tr>
+                <tr>
+                  <td data-label="ID">3</td>
+                  <td data-label="NAME">C</td>
+                  <td data-label="ATT"><div class="ui test toggle checkbox">
+                    <input type="checkbox" name="public" id="toggle-1"><label class="dn" for="toggle-1" data-content="OFF"></label> 
+                    
+                </div>
+                    </div></td>
+                </tr>
+              </tbody>
+            </table>
+      
+
+      </div>
+     
+            </div>
+          </div>
+        </div>
+      <div class="thirteen wide column maincontent" >
+
+
+    </div>
+        <div class="footer">Dev. Team : Ha1f D0zen</div>
+    <!-- ----------------------------------------------------------------------------------------------
+    --------------------------------------------------------------------------------------------------- -->
+   
+</body>
+<!-- <script src="index.js" ></script> -->
+<script>window.$ = window.jQuery = require('../../node_modules/jquery/dist/jquery.slim.min.js');</script>
+<script src="../../semantic/out/semantic.min.js"></script>
+<script src="../../semantic/out/components/accordion.js"></script>
+<script src="home.js"></script>
+
+<script>
+$('.ui.accordion').accordion();
+$('.ui.dropdown').dropdown();
+$('.ui.toggle.checkbox')
+            .checkbox()
+            .first().checkbox({
+              onChecked: function() {
+                $("label[for='" + $(this).attr("id") + "']").removeClass('dn').addClass('up').attr('data-content', 'PRESENT');
+              },
+              onUnchecked: function() {
+                $("label[for='" + $(this).attr("id") + "']").removeClass('up').addClass('dn').attr('data-content', 'ABSENT');
+              }
+            });
+
+
+$('.test.checkbox').checkbox('attach events', '.check.button', 'check');
+$('.test.checkbox').checkbox('attach events', '.uncheck.button', 'uncheck');
+</script>
+</html>

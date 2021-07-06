@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    overflow: hidden;
+}
+
+p {
+    color: white;
+}
+
+#about {
+    margin-top: 20px;
+    max-height: 40px !important;
+}
+
+#signout {
+    margin-top: 20px;
+    max-height: 40px !important;
+}
+
+#leftSideBar {    
+    position: sticky;
+}
+
+#content {
+    z-index: 900;
+    margin-top: -56em;
+    margin-right: 19em;
+}

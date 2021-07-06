@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="fileU.css">
+    <title>File Upload</title>
+    <link rel="stylesheet" href="../../semantic/out/semantic.min.css">
+</head>
+<body>
+    
+
+    <h1>Upload a File:</h1>
+
+    <div class="ui divider"></div>
+
+    <div class="ui centered card">
+        <div class="content">
+          <!-- <a class="header">Elyse</a> -->
+
+          <div class="ui compact menu">
+            <div class="required field">
+              <div class="ui calendar">
+                  <div class="ui input left icon">
+                    <i class="calendar icon"></i>
+                    <input type="date" placeholder="Up Date" id="datepicker">
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+    
+        <div class="ui animated fade button" id="upBut" tabindex="0">
+            <div class="visible content">
+                Select File    
+            </div>
+            <div class="hidden content">
+                <input type="file" name="myfile" class="fileUp">
+            </div>
+        </div>
+
+        <br>
+    
+        <button class="ui black button">Submit</button>
+
+        </div>
+      </div>
+
+</body>
+</html>
+
+<script>window.$ = window.jQuery = require('../../node_modules/jquery/dist/jquery.slim.min.js');</script>
+<script src="../../semantic/out/semantic.min.js"></script>
+<script src="fileU.js"></script>
